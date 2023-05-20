@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+    
+    
+    @include respond(tab-land)
+    {
+        font-size: 56%;             // 9px = 9px / 16px
+    }
+    @include respond(tab-port)
+    {
+        font-size: 50%;             // 8px = 8px / 16px
+    }
+    @include respond(phone)
+    {
+        font-size: 40%;             // 6.5px = 6.5px / 16px
+    }
+    @include respond(big-screen)
+    {
+        font-size: 85%;             // 14px = 14px / 16px = 87% but i write 85
+    }
+}
+
+
+body{
+    padding: 3rem;
+
+    @include respond(tab-port)
+    {
+        padding: 0;
+    }
+}
+
+::selection{
+    background-color: $primary-color;
+    color: $white-color;
+}
